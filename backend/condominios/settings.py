@@ -33,6 +33,11 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "corsheaders",
+    "api.acordo",
+    "api.cobranca",
+    "api.condominio",
+    "api.historico",
+    "api.unidade",
     "api.usuarios",
 ]
 
