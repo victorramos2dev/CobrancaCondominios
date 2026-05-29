@@ -1,7 +1,7 @@
 from rest_framework import viewsets, filters
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from smartcity.permissions import IsAdminOrReadOnly
+from condominios.permissions import IsAdminOrReadOnly
 from .models import Usuario
 from .serializers import UsuarioSerializer
 
@@ -20,8 +20,8 @@ class CustomTokenView(TokenObtainPairView):
 
 
 class UsuarioViewSet(viewsets.ModelViewSet):
-    queryset           = Usuario.objects.all()
-    serializer_class   = UsuarioSerializer
+    queryset = Usuario.objects.all().order_by('id')
+    serializer_class = UsuarioSerializer
     permission_classes = [IsAdminOrReadOnly]
-    filter_backends    = [filters.SearchFilter]
-    search_fields      = ['username', 'nome', 'tipo']
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['username', 'nome', 'tipo']
