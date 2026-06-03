@@ -1,0 +1,789 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: SomativaCondominios
+meta:
+  id: wrk_f4e9a77893bb4de6a66a8d7fd22e84d4
+  created: 1779974562406
+  modified: 1779974562406
+  description: ""
+collection:
+  - name: Usuario
+    meta:
+      id: fld_6b955b720df54ac481a570e0e096af7a
+      created: 1779974573240
+      modified: 1779974573240
+      sortKey: -1779974573240
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/token/
+        name: ReceberToken
+        meta:
+          id: req_cb576c6dfe3649bcb241f06dcf87d2cc
+          created: 1779974576029
+          modified: 1780062239026
+          isPrivate: false
+          description: ""
+          sortKey: -1779974576029
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username":"victor",
+            	"password":"admin"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/usuarios/
+        name: CriarUsuario
+        meta:
+          id: req_8ada92bff3b94e9a8d30a817e2ad72bd
+          created: 1780053344649
+          modified: 1780484340116
+          isPrivate: false
+          description: ""
+          sortKey: -1779974576129
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "username": "teste",
+              "email": "teste@example.com",
+              "first_name": "Usuario",
+              "last_name": "Comum",
+              "password": "user",
+              "tipo_usuario": "usuario"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwNTEzMTAxLCJpYXQiOjE3ODA0ODQzMDEsImp0aSI6IjI2MGNiZDAyZTUxYzQ0YjNiODdmYmE3NGU1YmFkOTNlIiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.pEwIrO16DxBNaJ5nbXRjymRVntnyPQuGH57P7xN1k1c
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Condominios
+    meta:
+      id: fld_2cc917923515431d86d45eb28aff298c
+      created: 1779974900376
+      modified: 1779974900376
+      sortKey: -1779974900376
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/condominios/
+        name: CadastrarCondominio
+        meta:
+          id: req_877fd4112117443f8d53c033906174f3
+          created: 1779975103892
+          modified: 1780051370041
+          isPrivate: false
+          description: ""
+          sortKey: -1779975103892
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Condomínio Residencial das Colinas",
+              "cnpj": "12.345.678/0001-60",
+              "endereco": "Rua das Planices, 123 - Centro, São Paulo - SP",
+              "status": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/condominios/
+        name: VerificarCondominio
+        meta:
+          id: req_bdd66181e2974d649f73914fc4f665a0
+          created: 1780051383754
+          modified: 1780489673637
+          isPrivate: false
+          description: ""
+          sortKey: -1780051383754
+        method: GET
+        parameters:
+          - name: search
+            value: Flores
+            description: ""
+            disabled: true
+          - name: status
+            value: "true"
+            description: ""
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwNTEzMTAxLCJpYXQiOjE3ODA0ODQzMDEsImp0aSI6IjI2MGNiZDAyZTUxYzQ0YjNiODdmYmE3NGU1YmFkOTNlIiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.pEwIrO16DxBNaJ5nbXRjymRVntnyPQuGH57P7xN1k1c
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/condominios/4/
+        name: AtualizarCondominio
+        meta:
+          id: req_0df342e2ac1948fcadfdd40180ecd480
+          created: 1780051541045
+          modified: 1780051941313
+          isPrivate: false
+          description: ""
+          sortKey: -1780051541045
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Condomínio Residencial das Colinas",
+              "cnpj": "12.345.678/0001-60",
+              "endereco": "Rua das Planices, 123 - Centro, São Paulo - SP",
+              "status": false
+            }
+        parameters:
+          - name: id
+            value: "1"
+            description: ""
+            disabled: true
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/condominios/4/
+        name: DeletarCondominio
+        meta:
+          id: req_5fc4715b98de410b9c6a8ec7b2696ce4
+          created: 1780051962403
+          modified: 1780052131191
+          isPrivate: false
+          description: ""
+          sortKey: -1780051962403
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Unidade
+    meta:
+      id: fld_5070d0a5f72649ba9cc6a806392c23be
+      created: 1780052233963
+      modified: 1780052233963
+      sortKey: -1780052233963
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/unidades/
+        name: CriarUnidade
+        meta:
+          id: req_174844ee53474ac69fbd823660957fb7
+          created: 1780052245069
+          modified: 1780053231026
+          isPrivate: false
+          description: ""
+          sortKey: -1780052245069
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"numero":"14",
+            	"bloco":"F",
+            	"status":"OCUPADO",
+            	"condominio":1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/unidades/
+        name: VerificarUnidades
+        meta:
+          id: req_eddf6d048fba4bf7872e51e936659094
+          created: 1780053233561
+          modified: 1780053340459
+          isPrivate: false
+          description: ""
+          sortKey: -1780053233561
+        method: GET
+        parameters:
+          - name: condominio
+            value: "2"
+            description: ""
+            disabled: true
+          - name: status
+            value: VAGO
+            description: ""
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/unidades/2/
+        name: AtualizarUnidade
+        meta:
+          id: req_1a5d301766d14e8784490e95ef7b6b32
+          created: 1780053359462
+          modified: 1780053803906
+          isPrivate: false
+          description: ""
+          sortKey: -1780053359462
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"numero":"16",
+            	"bloco":"A",
+            	"status":"OCUPADO",
+            	"condominio":2,
+            	"responsavel": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/unidades/3/
+        name: DeletarUnidade
+        meta:
+          id: req_8c8aed44654a4ec6b873429423504b04
+          created: 1780053837869
+          modified: 1780053942288
+          isPrivate: false
+          description: ""
+          sortKey: -1780053837869
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Cobranças
+    meta:
+      id: fld_5665fac8b3ad43908127d0b6888905bc
+      created: 1780053960047
+      modified: 1780053960047
+      sortKey: -1780053960047
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/cobrancas/
+        name: CriarCobranças
+        meta:
+          id: req_5a4501d2ca114defb820b8c1df71ff1e
+          created: 1780055262595
+          modified: 1780062151324
+          isPrivate: false
+          description: ""
+          sortKey: -1780055262595
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "unidade": 5,
+              "competencia": "2026-05-01",
+              "data_vencimento": "2026-05-10",
+              "valor": "500.00",
+              "status": "PENDENTE"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/cobrancas/
+        name: CriarCobrançaPaga
+        meta:
+          id: req_ba51f13f26bb47c1b48f67496d4a7e0e
+          created: 1780055903523
+          modified: 1780062087361
+          isPrivate: false
+          description: ""
+          sortKey: -1780055903523
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "unidade": 6,
+              "competencia": "2026-05-01",
+              "data_vencimento": "2026-05-10",
+              "valor": "450.00",
+              "status": "PAGO",
+              "data_pagamento": "2026-05-12",
+              "forma_pagamento": "PIX"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/cobrancas/
+        name: VerificarCobranças
+        meta:
+          id: req_16be9cba168d4570bd2638ffcb6aca6f
+          created: 1780059761386
+          modified: 1780060324704
+          isPrivate: false
+          description: ""
+          sortKey: -1780059761386
+        method: GET
+        parameters:
+          - name: unidade
+            value: "2"
+            description: ""
+            disabled: true
+          - name: status
+            value: PAGO
+            description: ""
+            disabled: true
+          - name: competencia
+            value: 2026-05-01
+            description: ""
+            disabled: true
+          - name: condominio
+            value: "2"
+            description: ""
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/cobrancas/6/
+        name: AtualizarCobranças
+        meta:
+          id: req_4a41545c6da645f8be969687ef27ef51
+          created: 1780060342549
+          modified: 1780062307544
+          isPrivate: false
+          description: ""
+          sortKey: -1780060342549
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "unidade": 5,
+              "competencia": "2026-05-01",
+              "data_vencimento": "2026-05-15",
+              "valor": "500.00",
+              "status": "PENDENTE"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/cobrancas/2/
+        name: DeletarCobranças
+        meta:
+          id: req_d6248512d54d47e194a514cffef94d96
+          created: 1780060536442
+          modified: 1780060591837
+          isPrivate: false
+          description: ""
+          sortKey: -1780060536442
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/cobrancas/3/pagar/
+        name: BaixarPagamento
+        meta:
+          id: req_dea9e4cb17c54f0799766dfb6d0abc1f
+          created: 1780060612915
+          modified: 1780062332874
+          isPrivate: false
+          description: ""
+          sortKey: -1780060612915
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "data_pagamento": "2026-05-29",
+              "forma_pagamento": "BOLETO"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDc5OTQ4LCJpYXQiOjE3ODAwNTExNDgsImp0aSI6IjU0MWRmYjZjNDBlZDQyM2VhMTE4ODRkZTRlZmMxYjM0IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.RrgQ5mVH6LDFt34-Cgxo3S0n2KaXDNJdkz-SK6iZ9Zk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/cobrancas/atualizar-vencidas/
+        name: AtualizarVencidas
+        meta:
+          id: req_db3d6a47ab754823a6002b85e5c180e2
+          created: 1780062326947
+          modified: 1780062451030
+          isPrivate: false
+          description: ""
+          sortKey: -1780062326947
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDkxMDQyLCJpYXQiOjE3ODAwNjIyNDIsImp0aSI6IjdmNDcxM2EwZjQ5ZTQ5YWNhMjI2MDliNWViMzk5NTI4IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.kXg--suVA9G9SFdOegIAnF3de0ymDEbGS3AfAAjbM-0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Acordos
+    meta:
+      id: fld_0f30308c085e4d4abfdb27cacbdb1a52
+      created: 1780061645039
+      modified: 1780061645039
+      sortKey: -1780061645039
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/acordos/
+        name: CriarAcordo
+        meta:
+          id: req_ad2163f004b24cb7b2ef79fab2e8809f
+          created: 1780061647944
+          modified: 1780062256462
+          isPrivate: false
+          description: ""
+          sortKey: -1780061647944
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "unidade": 5,
+              "numero_parcelas": 5,
+              "cobrancas_ids": [6, 7, 8]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDkxMDQyLCJpYXQiOjE3ODAwNjIyNDIsImp0aSI6IjdmNDcxM2EwZjQ5ZTQ5YWNhMjI2MDliNWViMzk5NTI4IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.kXg--suVA9G9SFdOegIAnF3de0ymDEbGS3AfAAjbM-0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/acordos/
+        name: VerificarAcordos
+        meta:
+          id: req_ce94783188394692b27907520c967cb7
+          created: 1780062467401
+          modified: 1780062503012
+          isPrivate: false
+          description: ""
+          sortKey: -1780062467401
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDkxMDQyLCJpYXQiOjE3ODAwNjIyNDIsImp0aSI6IjdmNDcxM2EwZjQ5ZTQ5YWNhMjI2MDliNWViMzk5NTI4IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.kXg--suVA9G9SFdOegIAnF3de0ymDEbGS3AfAAjbM-0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: ParcelasAcordo
+    meta:
+      id: fld_bcc850dede3147c0a729228b703904f8
+      created: 1780062552749
+      modified: 1780062552749
+      sortKey: -1780062552749
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/parcelas-acordo/
+        name: VerificarParcelas
+        meta:
+          id: req_32b95dd18cd8433499355c3d90193280
+          created: 1780062555368
+          modified: 1780062760431
+          isPrivate: false
+          description: ""
+          sortKey: -1780062555368
+        method: GET
+        parameters:
+          - name: acordo
+            value: "1"
+            description: ""
+            disabled: true
+          - name: status
+            value: PENDENTE
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDkxMDQyLCJpYXQiOjE3ODAwNjIyNDIsImp0aSI6IjdmNDcxM2EwZjQ5ZTQ5YWNhMjI2MDliNWViMzk5NTI4IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.kXg--suVA9G9SFdOegIAnF3de0ymDEbGS3AfAAjbM-0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/parcelas-acordo/2/
+        name: VericarParcela
+        meta:
+          id: req_e7188d8b07d04b53a8ece03c2a5efd1a
+          created: 1780062668396
+          modified: 1780062709173
+          isPrivate: false
+          description: ""
+          sortKey: -1780062668396
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.6.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMDkxMDQyLCJpYXQiOjE3ODAwNjIyNDIsImp0aSI6IjdmNDcxM2EwZjQ5ZTQ5YWNhMjI2MDliNWViMzk5NTI4IiwidXNlcl9pZCI6MSwibm9tZSI6IiIsInRpcG8iOiJhZG1pbmlzdHJhZG9yIn0.kXg--suVA9G9SFdOegIAnF3de0ymDEbGS3AfAAjbM-0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_a85dd03b72d3a2386c55d09324bf7f04b3896e26
+    created: 1779974562409
+    modified: 1779974562409
+environments:
+  name: Base Environment
+  meta:
+    id: env_a85dd03b72d3a2386c55d09324bf7f04b3896e26
+    created: 1779974562408
+    modified: 1779974562408
+    isPrivate: false
