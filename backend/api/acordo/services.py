@@ -86,7 +86,7 @@ def registrar_pagamento_parcela(parcela: AcordoParcela, data_pagamento, usuario=
     parcela.status = AcordoParcela.STATUS_PAGO
     parcela.save()
     
-    todas_pagas = not parcela.acordo.numero_parcelas.exclude(
+    todas_pagas = not parcela.acordo.parcelas.exclude(
         status=AcordoParcela.STATUS_PAGO
     ).exists()
     
@@ -95,4 +95,3 @@ def registrar_pagamento_parcela(parcela: AcordoParcela, data_pagamento, usuario=
         parcela.acordo.save(update_fields=['status','atualizado_em'])
     
     return parcela
-

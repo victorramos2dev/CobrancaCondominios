@@ -118,6 +118,22 @@ class CobrancaTest(TestCase):
         for item in resp.data.get('results', resp.data):
             self.assertEqual(item['status'], 'VENCIDO')
 
+    def test_cobranca_pendente_vencida_aparece_como_vencida_na_consulta(self):
+        Cobranca.objects.create(
+            unidade=self.unidade,
+            competencia=date(2026, 1, 1),
+            data_vencimento=date.today() - timedelta(days=1),
+            valor=Decimal('500.00'),
+            status='PENDENTE',
+        )
+
+        resp = self.client.get('/api/cobrancas/?status=VENCIDO')
+
+        self.assertEqual(resp.status_code, 200)
+        resultados = resp.data.get('results', resp.data)
+        self.assertEqual(len(resultados), 1)
+        self.assertEqual(resultados[0]['status'], 'VENCIDO')
+
     def test_filtro_por_unidade(self):
         Cobranca.objects.create(
             unidade=self.unidade, competencia=date(2026, 1, 1),
@@ -197,6 +213,24 @@ class AcordoTest(TestCase):
             'cobrancas_ids': [c_pendente.id],
         }, format='json')
         self.assertEqual(resp.status_code, 400)
+
+    def test_pagar_todas_parcelas_quita_acordo(self):
+        resp = self.client.post('/api/acordos/', {
+            'unidade': self.unidade.id,
+            'numero_parcelas': 2,
+            'cobrancas_ids': [self.c1.id, self.c2.id],
+        }, format='json')
+        self.assertEqual(resp.status_code, 201)
+
+        acordo = Acordo.objects.get(id=resp.data['id'])
+        for parcela in acordo.parcelas.all():
+            pagamento = self.client.post(f'/api/parcelas-acordo/{parcela.id}/pagar/', {
+                'data_pagamento': str(date.today()),
+            }, format='json')
+            self.assertEqual(pagamento.status_code, 200)
+
+        acordo.refresh_from_db()
+        self.assertEqual(acordo.status, Acordo.STATUS_QUITADO)
 
 
 class DashboardTest(TestCase):

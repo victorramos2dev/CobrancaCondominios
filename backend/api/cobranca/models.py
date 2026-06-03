@@ -101,6 +101,7 @@ class Cobranca(models.Model):
     def clean(self):
         if self.status == self.STATUS_PAGO and not self.data_pagamento:
             raise ValidationError({
+                'data_pagamento': 'Data de pagamento é obrigatória quando o status é PAGO.'
             })
 
     @property

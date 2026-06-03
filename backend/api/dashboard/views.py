@@ -5,6 +5,7 @@ from django.db.models import Count, Sum, Q
 from api.condominio.models import Condominio
 from api.unidade.models import Unidade
 from api.cobranca.models import Cobranca
+from api.cobranca.services import atualizar_status_vencidas
 from api.acordo.models import Acordo
 
 
@@ -16,6 +17,7 @@ class DashboardView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
+        atualizar_status_vencidas()
         cobrancas = Cobranca.objects.all()
 
         total_pagas = cobrancas.filter(status=Cobranca.STATUS_PAGO)
@@ -60,6 +62,7 @@ class InadimplenciaResumoView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
+        atualizar_status_vencidas()
         condominios = Condominio.objects.filter(status=True).prefetch_related('unidades')
         resultado = []
 

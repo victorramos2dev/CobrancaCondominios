@@ -22,6 +22,11 @@ class CobrancaViewSet(viewsets.ModelViewSet):
     search_fields = ['unidade__numero', 'unidade__condominio__nome']
     ordering_fields = ['data_vencimento', 'valor', 'competencia', 'status']
 
+    def get_queryset(self):
+        if self.action in ['list', 'retrieve']:
+            atualizar_status_vencidas()
+        return super().get_queryset()
+
     @action(detail=True, methods=['post'], url_path='pagar')
     def pagar(self, request, pk=None):
         """

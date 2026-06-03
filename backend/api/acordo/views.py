@@ -46,11 +46,10 @@ class AcordoParcelaViewSet(viewsets.ModelViewSet):
             )
         except ValueError as e:
             return Response(
-                {'sucess': False, 'message':str(e), 'errors':{}},
+                {'success': False, 'message': str(e), 'errors': {}},
                 status=status.HTTP_400_BAD_REQUEST,
             )
         return Response(AcordoParcelaSerializer(parcela).data)
 
 class PagamentoParcelaSerializer(drf_serializers.Serializer):
     data_pagamento = drf_serializers.DateField(required=True)
-
